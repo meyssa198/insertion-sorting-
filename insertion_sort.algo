@@ -1,0 +1,21 @@
+ALGORITHM insertion
+VAR
+    t : ARRAY_OF INTEGER[50];
+    n,j,i :INTEGER;
+BEGIN
+    write(" n = ");
+    read (n);
+    FOR i FROM 0 TO n-1 STEP 1  DO
+        read(t[i]);
+    END_FOR
+    FOR i FROM 1 TO n-1 STEP 1  DO
+        j := 0;
+        REPEAT
+            IF (t[j]<t[i]) THEN
+                t[j+1]:=t[j];
+                t[j]:=t[i];
+                j:=j+1;
+            END_IF
+        UNTIL (j=i-1)
+    END_FOR
+END
